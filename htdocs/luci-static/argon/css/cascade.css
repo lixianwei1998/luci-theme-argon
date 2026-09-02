@@ -4785,3 +4785,16 @@ div[style*="display:grid;grid-template-columns:repeat"] .ifacebox .ifacebox-body
     background: var(--primary);
   }
 }
+
+/* OpenClash mobile select width fix */
+@media screen and (max-width: 600px) {
+  [data-page^="admin-services-openclash"] .cbi-value-field,
+  [data-page^="admin-services-openclash"] .cbi-value-field .cbi-dropdown,
+  [data-page^="admin-services-openclash"] .cbi-value-field .cbi-input-select,
+  [data-page^="admin-services-openclash"] .cbi-value-field select {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
