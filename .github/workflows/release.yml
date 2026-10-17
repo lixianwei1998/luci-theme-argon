@@ -1,9 +1,13 @@
 name: Release packages
 
 on:
-  push:
-    tags:
-      - "*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '输入编译版本号，例如 v2.5.0'
+        required: true
+        type: string
+        default: 'v3.0.0'
 
 permissions:
   contents: write
@@ -32,7 +36,9 @@ jobs:
 
       - name: Resolve release version
         id: version
-        run: python3 .github/scripts/release_metadata.py "$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
+        env:
+          VERSION_INPUT: ${{ inputs.version }}
+        run: python3 .github/scripts/release_metadata.py "$VERSION_INPUT" >> "$GITHUB_OUTPUT"
 
       - name: Select documentation branch
         id: branch
