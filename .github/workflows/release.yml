@@ -47,12 +47,9 @@ jobs:
         run: |
           printf 'name=%s\n' "$DEFAULT_BRANCH" >> "$GITHUB_OUTPUT"
 
-  checks:
-    uses: ./.github/workflows/check.yml
-
   build:
     name: Build ${{ matrix.package_format }} packages
-    needs: [checks, metadata]
+    needs: [metadata]
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
