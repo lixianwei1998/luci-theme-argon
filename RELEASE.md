@@ -1,5 +1,18 @@
 # Update log for master branch
 
+## v3.1.4 [ 2026.11.13 ]
+
+- Fix inline alerts obscuring dropdowns and clipped dropdown options in tables (#740, #741).
+- Support newer LuCI dashboard layouts and configurable widget interactions (#742).
+- Improve Firefox ESR appearance controls, joined inputs, dropdowns and port statistics (#739).
+- Add background video playback controls and a keyboard skip link, and reduce realtime chart layout work.
+
+## v3.1.3 [ 2026.11.06 ]
+
+- Preserve bundled Argon translations during upgrades and synchronize language packages in subsequent online updates (#737).
+- Fix online wallpapers failing on firmware that selects a downloader without HTTPS support (#738).
+- Keep bridge VLAN dropdown labels readable instead of wrapping one character per line (#738).
+
 ## v3.1.2 [ 2026.11.02 ]
 
 - Fix port card wrapping and alignment, including ImmortalWrt.
